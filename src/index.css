@@ -1,68 +1,184 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* inspired by */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+/* https: //www.joshwcomeau.com/css/custom-css-reset/ */
+/* Kevin Powell CSS reset */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* 2. Remove default margin */
+* {
+    margin: 0;
 }
 
+/* set up the body */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    /* 3. Add accessible line-height */
+    line-height: 1.6;
+
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+
+    min-height: 100vh;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* assuming react as the top-level element is a `<div id="root">` */
+#root, #__next {
+    isolation: isolate;
+}
+
+/* Desing System */
+/* ==================================================================================================== */
+
+
+/* colors & fonts */
+
+/* Custom Properties, design system specific*/
+/* avoided setting font-size as the user may set a custom one */
+:root {
+  --clr-pink: #f215B6;
+  --clr-green: #A6E51C;
+  --clr-orange: #FD6F00;
+  --clr-blue: #253776;
+  --clr-cyan: #13BEFF;
+
+  --clr-dark: #181E4B;
+  --clr-gray: #5E6282;
+  --clr-light-gray: hsl(240, 3%, 70%);
+  --clr-white: #fff;
+  
+  --ff-poppins: 'Poppins', serif;
+  --ff-volkhov: "Volkhov", serif;
+  --ff-openSans: "Open Sans", serif;;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  --fs-h1: 4.7rem;
+  --fs-h2: 3.185rem;
+  --fs-h3: 1.56rem;
+  --fs-h4: 1.25rem;
+  --fs-body: 1.125rem;
+  --fs-small: 1rem;
+
+  /* box shadow */
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+          0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--clr-light);
+  background: var(--clr-dark);
+}
+
+::selection {
+  color: var(--clr-white);
+  background: var(--clr-dark);
+}
+
+/* 800 */
+
+/* @media (min-width: 950px) {
+  :root {
+      --fs-h1: 4.5rem;
+      --fs-h2: 3.75rem;
+      --fs-h3: 1.5rem;
+      --fs-body: 1.125rem;
+  }
+} */
+
+/* Typography */
+
+strong {
+  font-weight: var(--fw-bold)
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  font-weight: var(--fw-reg)
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--fs-h1)
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: var(--fs-h2)
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  font-size: var(--fs-h3)
 }
