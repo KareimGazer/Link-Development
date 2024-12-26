@@ -12,13 +12,13 @@ const Services = () => {
                     workers, consumers and partners. 
                 </p>
             </div>
-            <div className="services__container">
-                <img src="./services/crafty.png" className='service service-crafty'/>
-                <img src="./services/svc.png" className='service service-svc'/>
-                <img src="./services/envision.png" className='service service-envision'/>
-                <img src="./services/dyn.png" className='service service-dyn'/>
-                <img src="./services/trans.png" className='service service-trans'/>
-            </div>
+        
+            <img src="./services/crafty.png" className='service service-crafty'/>
+            <img src="./services/svc.png" className='service service-svc'/>
+            <img src="./services/envision.png" className='service service-envision'/>
+            <img src="./services/dyn.png" className='service service-dyn'/>
+            <img src="./services/trans.png" className='service service-trans'/>
+
         </div>
     );
 }
