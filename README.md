@@ -1,8 +1,24 @@
-# React + Vite
+# Link-Development Demo Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+High fidility implementation of a design mockup by Figma.
+I used React and plain CSS.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Download the repo
+
+2. Inside run
+
+Note: make sure `node.js` is installed
+```bash
+npm install # install dependencies
+npm run server # run the json-server to simulate fake backend
+npm run dev # run the development server
+```
+
+## Future roadmap
+
+- implementing CI/CD to host it using GitHub pages while using environment variables to switch between production build and development with JSON-server.
+
+- fixing hero section aligment to maintain visual hierarchy
+
