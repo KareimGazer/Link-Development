@@ -1,0 +1,62 @@
+
+.parallax {
+    background-image: url(./bg-gray.png);
+    background-size: cover;
+    width: 100%;
+    /* height: 100vh; */
+    background-attachment: fixed;
+    /*if you want the whole image to be visible not cut*/
+    background-size: 100% 100%; 
+}
+
+.top-bg-container {
+    /* height: 100vh; */
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 60%;
+    z-index: -10;
+}
+
+.bg-text {
+    position: absolute;
+    background-image: url(./ThingsWeDo.svg);
+    background-size: cover;
+    height: 24rem;
+    aspect-ratio: 1.47;
+    translate: 50% 50%;
+    top: -18%;
+    right: 92%;
+    z-index: -20;
+}
+
+.services__content {
+    background-color: var(--clr-pink);
+    grid-column: 2;
+    height: 75%;
+    margin: 6rem 0;
+    padding: 4em;
+
+    text-align: right;
+}
+
+.services__title {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-poppins);
+}
+
+.services__subtitle {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-reg);
+    font-family: var(--ff-openSans);
+    color: var(--clr-white);
+    margin-top: 2em;
+}
+
+.gallery {
+
+}
+
+.services__container {
+    z-index: 10;
+}
