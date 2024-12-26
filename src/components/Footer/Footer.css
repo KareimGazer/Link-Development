@@ -1,0 +1,129 @@
+
+/* footer */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    margin: 0;
+    padding: 0.6em 0;
+}
+
+.footer {
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+    /* text-align: center; */
+    position: relative;
+}
+
+.footer__body {
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 6rem;
+}
+
+/* grid */
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 4em;
+    margin: 1em auto;
+}
+
+.footer__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+}
+
+.footer__group__title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-bold);
+}
+
+.footer__para {
+    font-family: var(--ff-poppins);
+    color: var(--clr-dark);
+    padding: 0.4rem 0;
+}
+
+.footer__list {
+    margin: 0;
+    padding: 0;
+}
+
+.footer__item {
+    font-family: var(--ff-poppins);
+    color: var(--clr-dark);
+    list-style: none;
+    text-align: left;
+    padding: 0.4em 0;
+}
+
+.footer__item a {
+    text-decoration: none;
+    font-weight: bold;
+    font-weight: var(--fw-reg);
+}
+
+.footer__item a:hover {
+    color: var(--clr-gray);
+}
+
+.copy-right {
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+footer p {
+    font-weight: var(--fw-medium);
+}
+
+.social-btn {
+    display: inline-grid;
+    place-items: center;
+    font-size: 2em;
+    padding: 0 .6em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color: var(--clr-white);
+    box-shadow: var(--bs);
+}
+
+.download-btn {
+    display: block;
+    place-items: center;
+    font-size: var(--fs-body);
+    padding: 0 1.6em;
+    color: var(--clr-white);
+    background-color: var(--clr-dark);
+    text-decoration: none;
+    border-radius: 1.6em;
+    width: 6em;
+    height: 3em;
+}
+
+.footer__desc {
+    font-size: var(--fs-small);
+}
+
+.indicators {
+    margin: 0;
+}
+
+.app-desc {
+    padding: 1em 0;
+}
