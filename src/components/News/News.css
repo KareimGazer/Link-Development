@@ -1,0 +1,121 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.news__subtitle {
+    text-align: center;
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    color: var(--clr-gray);
+    padding: 1em 0;
+}
+
+.news__title {
+    text-align: center;
+    font-family: var(--ff-volkhov);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+.news__filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2rem;
+    padding: 1em;
+    margin: 1rem auto;
+}
+
+
+.filter-btn {
+    background-color: var(--clr-light-gray);
+    padding: 0.2em 0.8em;
+    border-radius: 0.5em;
+    border: none;
+}
+
+.news__grid {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 2em;
+    margin: 0 auto;
+    margin-bottom: 4em;
+}
+
+.news__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: var(--bs);
+    padding: 0;
+    border-radius: 0.8rem;
+}
+
+.article__avatar-container {
+    overflow: hidden;
+    border-radius: 0.8rem 0.8rem 0 0;
+    padding: 0;
+}
+
+.article__avatar {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.article-body {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.more-news-btn {
+    display: inline-block;
+    padding: 0.8em 1.6em;
+    background: var(--clr-orange);
+    color: var(--clr-white);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 300ms ease-in-out;
+    margin: auto;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: 10px 20px 35px -6px rgba(230,173,18,0.5);
+}
+
+.more-news-btn:hover {
+    transform: scale(1.05);
+}
+
+.article-desc {
+    text-decoration: none;
+    font-size: var(--fs-body);
+    font-family: var(--ff-poppins);
+    font-weight: var(--fw-semibold);
+}
+
+.article-date {
+
+}
+
+.article-category {
+    display: inline-block;
+    background-color: var(--clr-light-gray);
+    padding: 0.1em 1em;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-reg);
+    border-radius: 1em;
+    margin: 1em 0;
+}
