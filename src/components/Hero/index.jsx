@@ -1,7 +1,26 @@
 import { SiGoogledisplayandvideo360 } from "react-icons/si";
+import { useState, useEffect } from "react";
+import {getSlides} from '../../utils'
 import './Hero.css';
 
 const Hero = () => {
+    const [index, setIndex] = useState(0)
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getSlides()
+                setData(data)
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
+
+        fetchData()
+    }, [])
+
     return (
         <main className="grid-container grid-container--hero flow">
             <div className="indicators">
