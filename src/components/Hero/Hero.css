@@ -53,8 +53,8 @@
     display: grid;
     place-items: center;
     padding-inline: 1rem;
+    padding-right: 6rem;
     padding-bottom: 4rem;
-
     overflow: hidden;
 }
 
@@ -124,8 +124,8 @@
     display: flex;
     justify-content: left;
     gap: 2em;
-    margin: 1em 0em;
     width: auto;
+    padding: 1.6em 0;
 }
 
 .indicator {
@@ -157,7 +157,7 @@
     font-size: var(--fs-h4);
     font-weight: var(--fw-bold);
     font-family: var(--ff-poppins);
-    color: var(--clr-pink);
+    /* color: var(--clr-pink); */
     text-transform: uppercase;
 }
 
@@ -202,7 +202,8 @@
     display: flex;
     justify-content: center;
     gap: 2em;
-    margin: 6em;
+    margin: 0em;
+    margin-top: 2.4em;
 }
 
 @media (min-width: 45em) {

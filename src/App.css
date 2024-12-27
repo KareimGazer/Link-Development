@@ -63,7 +63,7 @@ strong {
 .bg-animation {
   position: absolute;
   display: inline-block;
-  background-image: url(./Decore.svg);
+  /* background-image: url(./Decore.svg); */
   background-size: cover;
   height: 60rem;
   aspect-ratio: 0.9;
@@ -72,7 +72,12 @@ strong {
   translate: 0% -35%;
   overflow: hidden;
   animation: bgAnimation 20s infinite linear;
+  color: yellowgreen;
 }
+
+/* #Top_Nav_Decore {
+  fill: var(--clr-pink);
+} */
 
 .flex-col {
   display: flex;

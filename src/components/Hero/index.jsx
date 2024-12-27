@@ -1,51 +1,36 @@
 import { SiGoogledisplayandvideo360 } from "react-icons/si";
-import { useState, useEffect } from "react";
-import {getSlides} from '../../utils'
 import './Hero.css';
 
-const Hero = () => {
-    const [index, setIndex] = useState(0)
-    const [data, setData] = useState([])
+const Hero = ({data, index, setIndex}) => {
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await getSlides()
-                setData(data)
-            }
-            catch (error) {
-                console.error(error)
-            }
-        }
-
-        fetchData()
-    }, [])
+    const {brief, title, imgUrl, imgSrc, itemUrl, category, videoUrl, colorCode} = data[index] || {}
 
     return (
         <main className="grid-container grid-container--hero flow">
             <div className="indicators">
-                <button className='indicator active'><span className="sr-only active">marking</span></button>
-                <button className='indicator'><span className="sr-only">crafty</span></button>
-                <button className='indicator'><span className="sr-only">outsource</span></button>
+                {data?.sort((a, b) => a.order - b.order).map((item, i) => (
+                    <button key={i} className={`indicator ${index === i ? 'active' : ''}`} onClick={() => setIndex(i)} style={{backgroundColor: `#${item.colorCode}`}}>
+                        <span className="sr-only">{item.category}</span>
+                    </button>
+                ))}
             </div>
             <article className="hero-details flow">
-            <header className="flow">
-                <p className="hero__subtitle">marketing</p>
-                <h1 className="hero__title">25 Years of Business Growth</h1>
-            </header>
-                <p className="hero__desc">
-                    Link Development, the global technology solutions provider and an A15 company, unveiled today that it has recently marked its Silver Jubilee anniversary.
-                </p>
+                <header className="flow">
+                    <p className="hero__subtitle" style={{color: `#${colorCode}`}}>{category}</p>
+                    <h1 className="hero__title">{title}</h1>
+                </header>
+                
+                <p className="hero__desc">{brief}</p>
 
-                <div className='hero__cta indicators'>
-                    <a href="#" className="info-btn cta-btn">Find out more</a>
-                    <a href="#" className="video-btn cta-btn"><SiGoogledisplayandvideo360 /></a>
+                <div className='hero__cta'>
+                    <a href={itemUrl} className="info-btn cta-btn">Find out more</a>
+                    <a href={videoUrl} className="video-btn cta-btn"><SiGoogledisplayandvideo360 /></a>
                 </div>
             </article>
 
             <picture>
-                <source srcSet="/people/boy.webp" type="image/webp"/>
-                <img src="/people/boy.png" alt="Douglas Hurley"/>
+                <source srcSet={imgSrc} type="image/webp"/>
+                <img src={imgUrl} alt="Douglas Hurley"/>
             </picture>
         </main>
     );
