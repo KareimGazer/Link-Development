@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import './App.css'
 
 import { useState, useEffect } from "react";
-import {getSlides} from './utils'
+import { getSlides } from './utils'
 
 function App() {
 

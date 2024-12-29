@@ -1,23 +1,46 @@
 import './services.css';
+import { FaArrowRight } from "react-icons/fa6";
+
+import { useState, useEffect } from "react";
+import { getThingsWeDo} from '../../utils'
 
 const Services = () => {
+
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getThingsWeDo()
+                setData(data)
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
+        fetchData()
+    }, [])
+
     return (
         <div className="services parallax top-bg-container gallery" id="about">
-            <div className='bg-text'></div>
+            
             <div className='services__content'>
-                <h2 className='services__title'>We Deliver</h2>
-                <h2 className='services__title'>Digital Productivity</h2>
-                <p className='services__subtitle'>
-                    We craft technology solutions that digitally bond and transform the productivity of our customers and their citizens, 
-                    workers, consumers and partners. 
-                </p>
+            <div className='bg-text'></div>
+                <h2 className='services__title'>{data?.title}</h2>
+                <p className='services__subtitle'>{data?.excerpt}</p>
             </div>
-        
-            <img src="./services/crafty.png" className='service service-crafty'/>
-            <img src="./services/svc.png" className='service service-svc'/>
-            <img src="./services/envision.png" className='service service-envision'/>
-            <img src="./services/dyn.png" className='service service-dyn'/>
-            <img src="./services/trans.png" className='service service-trans'/>
+
+            {data.items?.map((item, index) => {
+                const {id, imgUrl, title, description} = item
+                return (
+                    <div key={id} className='services__item'>
+                        <img src={imgUrl} alt={title} className='services__image'/>
+                        <h3 className='services__item__title'>{title}</h3>
+                        <div className='lurk'> <FaArrowRight className='icon'/> <p>Read more</p> </div>
+                        {/* <p className='services__item-description'>{description}</p> */}
+                    </div>
+                )
+            })}
 
         </div>
     );
