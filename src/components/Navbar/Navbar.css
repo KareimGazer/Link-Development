@@ -133,7 +133,7 @@
     font-weight: var(--fw-reg);
     text-decoration: none;
     display: block;
-    padding: 0.5em 0;
+    padding: 1em;
 }
 
 .submenu__link:hover {

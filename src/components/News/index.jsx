@@ -86,9 +86,9 @@ const SocialLinks = () => {
             <div>
                 <CiShare2 onClick={() => setShared(!shared)} />
                 {shared && <div className="share-links">
-                    <img src="https://store-images.s-microsoft.com/image/apps.37935.9007199266245907.b029bd80-381a-4869-854f-bac6f359c5c9.91f8693c-c75b-4050-a796-63e1314d18c9?h=210" alt="facebook" />
-                    <img src="https://yt3.googleusercontent.com/ecGSwfk4BtzH_-0VPoZE9zw1dKdOyHvvacJaJ8Is0N0vhh2MIBSkWAy1yPf3MSoiZzLL0C3uF6Q=s900-c-k-c0x00ffffff-no-rj" alt="twitter" />
-                    <img src="https://i.pinimg.com/originals/f1/ba/a8/f1baa8c8c56cb9840b44f39628915e37.jpg" alt="gmail" />
+                    <a href="https://www.facebook.com/link.development/?locale=ar_AR" className="share-link"><img src="https://store-images.s-microsoft.com/image/apps.37935.9007199266245907.b029bd80-381a-4869-854f-bac6f359c5c9.91f8693c-c75b-4050-a796-63e1314d18c9?h=210" alt="facebook" /></a>
+                    <a href="https://x.com/linkdevelopment?lang=ar" className="share-link"><img src="https://yt3.googleusercontent.com/ecGSwfk4BtzH_-0VPoZE9zw1dKdOyHvvacJaJ8Is0N0vhh2MIBSkWAy1yPf3MSoiZzLL0C3uF6Q=s900-c-k-c0x00ffffff-no-rj" alt="twitter" /></a>
+                    <a href="https://linkdevelopment.com/contact-us/" className="share-link"><img src="https://i.pinimg.com/originals/f1/ba/a8/f1baa8c8c56cb9840b44f39628915e37.jpg" alt="gmail" /></a>
                 </div>}
             </div>
         </div>
